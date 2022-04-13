@@ -53,7 +53,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tensor Network" href="TensorNetwork.html" />
+    <link rel="next" title="Quantum Spin Chain" href="QuantumSpinChain.html" />
     <link rel="prev" title="Introduction" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -105,8 +105,18 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="QuantumSpinChain.html">
+   Quantum Spin Chain
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="TensorNetwork.html">
    Tensor Network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cytnx.html">
+   cytnx
   </a>
  </li>
 </ul>
@@ -304,7 +314,22 @@
   T_{s_1, s_2} T_{s_2, s_3} T_{s_3, s_4} T_{s_4, s_1}
   = \text{Tr}\left( T^4 \right).
 \]</div>
-<p>We have <span class="math notranslate nohighlight">\(Z[N]=\text{Tr}\left( T^N \right)\)</span>.</p>
+<p>We have</p>
+<div class="math notranslate nohighlight">
+\[
+  Z[N]=\text{Tr}\left( T^N \right)=\lambda^N_+ + \lambda^N_-,
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\lambda_\pm\)</span> are the eigenvalues of the transfer matrix <span class="math notranslate nohighlight">\([T]\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+  \lambda_\pm = e^{\beta J}\cosh(\beta h)
+  \pm \sqrt{e^{2\beta J} \sinh(\beta h) + e^{-2\beta J}}
+\]</div>
+<p>when <span class="math notranslate nohighlight">\(h=0\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+  \lambda_\pm(h=0) = e^{\beta J} \pm e^{-\beta J}
+\]</div>
 </div>
 <div class="section" id="ising-model-in-two-dimensions">
 <h2>Ising model in two dimensions<a class="headerlink" href="#ising-model-in-two-dimensions" title="Permalink to this headline">¶</a></h2>
@@ -346,10 +371,10 @@
             <p class="prev-next-title">Introduction</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="TensorNetwork.html" title="next page">
+    <a class='right-next' id="next-link" href="QuantumSpinChain.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tensor Network</p>
+        <p class="prev-next-title">Quantum Spin Chain</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

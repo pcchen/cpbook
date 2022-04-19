@@ -5,5 +5,8 @@ format: jb-book
 root: intro
 chapters:
 - file: Ising
+- file: QuantumSpinChain
 - file: TensorNetwork
+- file: cytnx.md
+- file: cytnx_reference.md
 #- file: notebooks

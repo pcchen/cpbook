@@ -1,4 +1,4 @@
-# cytnx
+# cytnx installations
 
 ## Conda install
 

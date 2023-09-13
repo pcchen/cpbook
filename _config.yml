@@ -18,10 +18,13 @@ latex:
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
   - references.bib
-
+sphinx:
+  config:
+    bibtex_reference_style: author_year
+    
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/executablebooks/jupyter-book  # Online location of your book
+  url: https://github.com/github.com/pcchen/cpbook  # Online location of your book
   path_to_book: docs  # Optional path to your book, relative to the repository root
   branch: master  # Which branch of the repository should be used when creating links (optional)
 
@@ -30,3 +33,6 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+
+launch_buttons:
+  jupyterhub_url: http://140.114.80.119:8000/

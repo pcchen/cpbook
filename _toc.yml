@@ -9,4 +9,6 @@ chapters:
 - file: TensorNetwork
 - file: cytnx.md
 - file: cytnx_reference.md
-#- file: notebooks
+- file: QuantumComputation
+- file: notebooks
+- file: bibliography

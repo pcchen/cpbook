@@ -1,0 +1,2853 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Hitchhiker’s Guide to Cytnx (≥0.9.7) &#8212; Computational Physics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Cytnx_user_guide';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Computational Physics - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Computational Physics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Ising.html">Ising Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TensorNetwork.html">Tensor Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cytnx.html">cytnx installations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cytnx_reference.html">cytnx references</a></li>
+<li class="toctree-l1"><a class="reference internal" href="QuantumComputation.html">Quantum Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html">test</a></li>
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="http://140.114.80.119:8000/hub/user-redirect/git-pull?repo=https%3A//github.com/github.com/pcchen/cpbook&urlpath=tree/cpbook/docs/Cytnx_user_guide.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/github.com/pcchen/cpbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/github.com/pcchen/cpbook/issues/new?title=Issue%20on%20page%20%2FCytnx_user_guide.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Cytnx_user_guide.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Hitchhiker’s Guide to Cytnx (≥0.9.7)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">The Hitchhiker’s Guide to Cytnx (≥0.9.7)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warning">Warning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">Numpy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor">Tensor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unitensor">UniTensor</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rank-n-unitensor-and-scalar">Rank <span class="math notranslate nohighlight">\(n\)</span> UniTensor and scalar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rank-1-tensor-and-vector">Rank-1 tensor and vector</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rank-2-tensor-and-matrix">Rank-2 tensor and matrix</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#issue">issue</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separator">Separator</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#scipost">SciPost</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-behavior">1. Objects behavior</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#everything-is-reference">1.1 Everything is reference¶</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone">1.2 Clone</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device">2. Device</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-threads">2.1 Number of threads</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-gpus">2.2 Number of GPUs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-status">2.3 GPU status</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3. Tensor</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-tensor">3.1 Creating a Tensor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulating-tensors">3.2. Manipulating Tensors¶</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reshape">3.2.1. reshape</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7. UniTensor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print-and-display">7.1. Print and display</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-hitchhiker-s-guide-to-cytnx-0-9-7">
+<h1>The Hitchhiker’s Guide to Cytnx (≥0.9.7)<a class="headerlink" href="#the-hitchhiker-s-guide-to-cytnx-0-9-7" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Last updated on 12/2/2023</p></li>
+<li><p>Pochung Chen</p></li>
+</ul>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+<span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">channel</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="o">--</span><span class="n">name</span> <span class="n">py39_cytnx</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.9</span> <span class="n">_openmp_mutex</span><span class="o">=*=*</span><span class="n">_llvm</span>
+</pre></div>
+</div>
+</section>
+<section id="warning">
+<h2>Warning<a class="headerlink" href="#warning" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>import cytnx before numpy</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cytnx</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cytnx</span><span class="o">.</span><span class="n">__path__</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cytnx</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/Users/pcchen/miniforge3/lib/python3.10/site-packages/cytnx-0.9.7-py3.10-macosx-11.0-arm64.egg/cytnx&#39;]
+0.9.7
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="numpy">
+<h2>Numpy<a class="headerlink" href="#numpy" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Vr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Vr</span><span class="p">)</span>
+
+<span class="n">Vc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Vc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1. 1. 1.]]
+[[1.]
+ [1.]
+ [1.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Vr</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Vc</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1. 1. 1.]
+(3,)
+(1, 3)
+(3, 1)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">UTr</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">UTr</span><span class="p">)</span>
+
+<span class="n">UTc</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">UTc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-------- start of print ---------
+Tensor name: 
+is_diag    : False
+contiguous : True
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total elem: 3
+type  : Double (Float64)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cytnx device: CPU
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Shape : (1,3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1.00000e+00 1.00000e+00 1.00000e+00 ]]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-------- start of print ---------
+Tensor name: 
+is_diag    : False
+contiguous : True
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total elem: 3
+type  : Double (Float64)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cytnx device: CPU
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Shape : (3,1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1.00000e+00 ]
+ [1.00000e+00 ]
+ [1.00000e+00 ]]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="c1"># print(&quot;rowrank={}&quot;.format(A.rowrank()))</span>
+<span class="c1"># A.print_diagram()</span>
+<span class="c1"># print(A[:,2])</span>
+
+<span class="n">A2</span> <span class="o">=</span> <span class="n">A</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">set_rowrank</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rowrank=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">A2</span><span class="o">.</span><span class="n">rowrank</span><span class="p">()))</span>
+<span class="n">A2</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rowrank=1
+-----------------------
+tensor Name : 
+tensor Rank : 2
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+          ---------     
+         /         \    
+   0 ____| 3     1 |____ 1
+         \         /    
+          ---------     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-------- start of print ---------
+Tensor name: 
+is_diag    : False
+contiguous : True
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total elem: 3
+type  : Double (Float64)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cytnx device: CPU
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Shape : (3,1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1.00000e+00 ]
+ [1.00000e+00 ]
+ [1.00000e+00 ]]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A2</span> <span class="o">=</span> <span class="n">A</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">set_rowrank</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rowrank=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">rowrank</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A2</span><span class="o">.</span><span class="n">shape</span><span class="p">())</span>
+<span class="n">A2</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2-th column</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">A</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># 2-th column</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">A2</span> <span class="o">=</span> <span class="n">A</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">set_rowrank</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rowrank=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">rowrank</span><span class="p">()))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">A2</span><span class="o">.</span><span class="n">shape</span><span class="p">())</span>
+
+<span class="ne">RuntimeError</span>: 
+<span class="c1"># Cytnx error occur at void cytnx::Tensor_impl::reshape_(const std::vector&lt;long long int&gt;&amp;)</span>
+<span class="c1"># error: [ERROR] new shape does not match the number of elements.</span>
+<span class="c1"># file : /Users/pcchen/github/Cytnx/include/backend/Tensor_impl.hpp (289)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tensor">
+<h2>Tensor<a class="headerlink" href="#tensor" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+<span class="n">T</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2)
+[[1. 1.]]
+(1, 2)
+[[1. 1.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2,)
+[1. 1.]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 1)
+[[1.]
+ [1.]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="unitensor">
+<h2>UniTensor<a class="headerlink" href="#unitensor" title="Link to this heading">#</a></h2>
+<section id="rank-n-unitensor-and-scalar">
+<h3>Rank <span class="math notranslate nohighlight">\(n\)</span> UniTensor and scalar<a class="headerlink" href="#rank-n-unitensor-and-scalar" title="Link to this heading">#</a></h3>
+<p>Consider a rank-<span class="math notranslate nohighlight">\(n\)</span> UniTensor <span class="math notranslate nohighlight">\(A\)</span> with the shape <span class="math notranslate nohighlight">\((1_1,1_2,\dots,1_{n-1},1_n)\)</span>.
+It has only one element <span class="math notranslate nohighlight">\(A_{0_10_2\dots0_{n-1}0_n}\)</span>.
+How do one gets the value of this element? Note that slicing will give you a tensor.</p>
+<p>As an exmple, consider a rank-5 UniTensor <span class="math notranslate nohighlight">\(A\)</span> with shape (1,1,1,1,1) with one elment <span class="math notranslate nohighlight">\(A_{00000}=1.0\)</span>
+If you use slicing, <code class="docutils literal notranslate"><span class="pre">A[0,0,0,0,0]</span></code> is still a UniTensor. To get its value, one can use <code class="docutils literal notranslate"><span class="pre">A[0,0,0,0,0].item()</span></code>.
+Or one can use <code class="docutils literal notranslate"><span class="pre">A.at([0,0,0,0,0]).value()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">):</span>
+    <span class="n">shape</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+    <span class="n">S</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;shape=</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">S</span><span class="o">.</span><span class="n">shape</span><span class="p">()))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">S</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">S</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>shape=[1]
+1.0
+1.0
+shape=[1, 1]
+1.0
+1.0
+shape=[1, 1, 1]
+1.0
+1.0
+shape=[1, 1, 1, 1]
+1.0
+1.0
+shape=[1, 1, 1, 1, 1]
+1.0
+1.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="rank-1-tensor-and-vector">
+<h3>Rank-1 tensor and vector<a class="headerlink" href="#rank-1-tensor-and-vector" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">V</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V</span><span class="o">.</span><span class="n">shape</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V</span><span class="o">.</span><span class="n">rowrank</span><span class="p">())</span>
+<span class="n">V</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3]
+0
+-----------------------
+tensor Name : 
+tensor Rank : 1
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+         --------     
+        /        \    
+        |      3 |____ 0
+        \        /    
+         --------     
+-------- start of print ---------
+Tensor name: 
+is_diag    : False
+contiguous : True
+
+Total elem: 3
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (3)
+[0.00000e+00 1.00000e+00 2.00000e+00 ]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">V</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">set_rowrank</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V</span><span class="o">.</span><span class="n">shape</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V</span><span class="o">.</span><span class="n">rowrank</span><span class="p">())</span>
+<span class="n">V</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3]
+1
+-----------------------
+tensor Name : 
+tensor Rank : 1
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+          --------     
+         /        \    
+   0 ____| 3      |        
+         \        /    
+          --------     
+-------- start of print ---------
+Tensor name: 
+is_diag    : False
+contiguous : True
+
+Total elem: 3
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (3)
+[0.00000e+00 1.00000e+00 2.00000e+00 ]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">V</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">V</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+<span class="n">V</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------
+tensor Name : 
+tensor Rank : 1
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+         --------     
+        /        \    
+        |      3 |____ 0
+        \        /    
+         --------     
+-------- start of print ---------
+Tensor name: 
+is_diag    : False
+contiguous : True
+
+Total elem: 3
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (3)
+[0.00000e+00 1.00000e+00 2.00000e+00 ]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">V</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">set_rowrank</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">V</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+<span class="n">V</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------
+tensor Name : 
+tensor Rank : 1
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+         --------     
+        /        \    
+        |      3 |____ 0
+        \        /    
+         --------     
+-------- start of print ---------
+Tensor name: 
+is_diag    : False
+contiguous : True
+
+Total elem: 3
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (3)
+[0.00000e+00 1.00000e+00 2.00000e+00 ]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="rank-2-tensor-and-matrix">
+<h3>Rank-2 tensor and matrix<a class="headerlink" href="#rank-2-tensor-and-matrix" title="Link to this heading">#</a></h3>
+<p>Consider a rank-2 tensor <span class="math notranslate nohighlight">\(A\)</span> with elements <span class="math notranslate nohighlight">\(A_{ij}\)</span> where <span class="math notranslate nohighlight">\(i \in (0,1)\)</span> and <span class="math notranslate nohighlight">\(j \in (0,1,2)\)</span>. The shape of <span class="math notranslate nohighlight">\(A\)</span> is <span class="math notranslate nohighlight">\((2,3)\)</span>.</p>
+<p>We can define a corresponding <span class="math notranslate nohighlight">\(2\times 3\)</span> matrix <span class="math notranslate nohighlight">\([A]\)</span> with the same elemtns <span class="math notranslate nohighlight">\(A_{i,j}\)</span>
+$<span class="math notranslate nohighlight">\(
+  \left[ \begin{array}{ccc}
+  A_{0,0} &amp; A_{0,1} &amp; A_{0,2} \\
+  A_{1,0} &amp; A_{1,1} &amp; A_{1,2} \\
+  \end{array} \right].
+\)</span>$</p>
+<p>It has 2 rows and 3 columns. Hence <span class="math notranslate nohighlight">\(i\)</span> is the row index while <span class="math notranslate nohighlight">\(j\)</span> is the column index.
+Since there is only one index corresponds to the row index, we say that the <strong>row rank is 1</strong>.</p>
+<p>To distinguish them, we put a comma “,” between them. On the left of the comma is the row index <span class="math notranslate nohighlight">\(i\)</span>, while on the right of the comma is the column index <span class="math notranslate nohighlight">\(j\)</span>.</p>
+<p>For example <span class="math notranslate nohighlight">\(i=1\)</span>-th row corresponds to <span class="math notranslate nohighlight">\(\left[ \begin{array}{ccc} A_{1,0} &amp; A_{1,1} &amp; A_{1,2} \end{array} \right]\)</span>, while <span class="math notranslate nohighlight">\(j=2\)</span>-th column corresponds to
+<span class="math notranslate nohighlight">\(
+  \left[ \begin{array}{c}
+  A_{0,2} \\
+  A_{1,2} \\
+  A_{2,2} \\
+  \end{array} \right].
+\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">set_name</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_rowrank</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># rank-2 tensor A with shape=(3,4) and rowrank=1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rowrank=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">rowrank</span><span class="p">()))</span>
+<span class="n">A</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rowrank=1
+-----------------------
+tensor Name : A
+tensor Rank : 2
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+          ---------     
+         /         \    
+   0 ____| 2     3 |____ 1
+         \         /    
+          ---------     
+-------- start of print ---------
+Tensor name: A
+is_diag    : False
+contiguous : True
+
+Total elem: 6
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (2,3)
+[[0.00000e+00 1.00000e+00 2.00000e+00 ]
+ [3.00000e+00 4.00000e+00 5.00000e+00 ]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ar1</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">set_rowrank</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rowrank=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Ar1</span><span class="o">.</span><span class="n">rowrank</span><span class="p">()))</span>
+<span class="n">Ar1</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1-th row</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">Ar1</span><span class="p">)</span> <span class="c1"># 1-th row</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rowrank=1
+-----------------------
+tensor Name : 
+tensor Rank : 2
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+          ---------     
+         /         \    
+   0 ____| 1     3 |____ 1
+         \         /    
+          ---------     
+1-th row
+ -------- start of print ---------
+Tensor name: 
+is_diag    : False
+contiguous : True
+
+Total elem: 3
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (1,3)
+[[3.00000e+00 4.00000e+00 5.00000e+00 ]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ac2</span> <span class="o">=</span> <span class="n">A</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">set_rowrank</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rowrank=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Ac2</span><span class="o">.</span><span class="n">rowrank</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Ac2</span><span class="o">.</span><span class="n">shape</span><span class="p">())</span>
+<span class="n">Ac2</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2-th column</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">Ac2</span><span class="p">)</span> <span class="c1"># 2-th column</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rowrank=1
+[2, 1]
+-----------------------
+tensor Name : 
+tensor Rank : 2
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+          ---------     
+         /         \    
+   0 ____| 2     1 |____ 1
+         \         /    
+          ---------     
+2-th column
+ -------- start of print ---------
+Tensor name: 
+is_diag    : False
+contiguous : True
+
+Total elem: 2
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (2,1)
+[[2.00000e+00 ]
+ [5.00000e+00 ]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">set_name</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_rowrank</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># rank-2 tensor A with shape=(3,4) and rowrank=1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rowrank=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">rowrank</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">())</span>
+<span class="n">X</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rowrank=1
+[2, 1]
+-----------------------
+tensor Name : X
+tensor Rank : 2
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+          ---------     
+         /         \    
+   0 ____| 2     1 |____ 1
+         \         /    
+          ---------     
+-------- start of print ---------
+Tensor name: X
+is_diag    : False
+contiguous : True
+
+Total elem: 2
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (2,1)
+[[0.00000e+00 ]
+ [1.00000e+00 ]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;rank=</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">rank</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A[0,0,0,0,0]=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A[0,0,0,0,0].item()=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A.at([0,0,0,0,0]).value=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">at</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rank=5
+A=
+ -------- start of print ---------
+Tensor name: 
+is_diag    : False
+contiguous : True
+
+Total elem: 1
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (1,1,1,1,1)
+[[[[[1.00000e+00 ]]]]]
+
+
+
+
+A[0,0,0,0,0]=
+ -------- start of print ---------
+Tensor name: 
+is_diag    : False
+contiguous : True
+
+Total elem: 1
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (1)
+[1.00000e+00 ]
+
+
+
+
+A[0,0,0,0,0].item()=
+ 1.0
+A.at([0,0,0,0,0]).value=
+ 1.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="issue">
+<h2>issue<a class="headerlink" href="#issue" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">T</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">119</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">T</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">T</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+
+<span class="ne">RuntimeError</span>: 
+<span class="c1"># Cytnx error occur at T&amp; cytnx::Tensor::item() [with T = double]</span>
+<span class="c1"># error: [ERROR][Tensor.item&lt;T&gt;]item can only be called from a Tensor with only one element</span>
+
+<span class="c1"># file : /Users/pcchen/github/Cytnx/include/Tensor.hpp (915)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">UT</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">UT</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">120</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">UT</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2</span><span class="p">])</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">UT</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+
+<span class="ne">RuntimeError</span>: 
+<span class="c1"># Cytnx error occur at T&amp; cytnx::Tensor::item() [with T = double]</span>
+<span class="c1"># error: [ERROR][Tensor.item&lt;T&gt;]item can only be called from a Tensor with only one element</span>
+
+<span class="c1"># file : /Users/pcchen/github/Cytnx/include/Tensor.hpp (915)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="separator">
+<h2>Separator<a class="headerlink" href="#separator" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">reshape_</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">set_rowrank_</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># rank-2 tensor A with shape=(3,4) and rowrank=1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rowrank=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">rowrank</span><span class="p">()))</span>
+<span class="n">A</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rowrank=1
+-----------------------
+tensor Name : 
+tensor Rank : 2
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+          ---------     
+         /         \    
+   0 ____| 3     4 |____ 1
+         \         /    
+          ---------     
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">,:])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rowrank=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">rowrank</span><span class="p">()))</span>
+
+<span class="n">A</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rowrank=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">A</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">rowrank</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------
+tensor Name : 
+tensor Rank : 1
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+         --------     
+        /        \    
+        |      4 |____ 0
+        \        /    
+         --------     
+-------- start of print ---------
+Tensor name: 
+is_diag    : False
+contiguous : True
+
+Total elem: 4
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (4)
+[4.00000e+00 5.00000e+00 6.00000e+00 7.00000e+00 ]
+
+
+
+
+rowrank=0
+-----------------------
+tensor Name : 
+tensor Rank : 1
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+         --------     
+        /        \    
+        |      3 |____ 0
+        \        /    
+         --------     
+-------- start of print ---------
+Tensor name: 
+is_diag    : False
+contiguous : True
+
+Total elem: 3
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (3)
+[2.00000e+00 6.00000e+00 1.00000e+01 ]
+
+
+
+
+rowrank=0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">reshape_</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">rowrank</span><span class="p">())</span>
+<span class="n">A</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-------- start of print ---------
+Tensor name: 
+is_diag    : False
+contiguous : True
+
+Total elem: 3
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (3)
+[2.00000e+00 6.00000e+00 1.00000e+01 ]
+
+
+
+
+0
+-----------------------
+tensor Name : 
+tensor Rank : 1
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+         --------     
+        /        \    
+        |      3 |____ 0
+        \        /    
+         --------     
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">reshape_</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">rowrank</span><span class="p">())</span>
+<span class="n">A</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-------- start of print ---------
+Tensor name: 
+is_diag    : False
+contiguous : True
+
+Total elem: 3
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (3)
+[2.00000e+00 6.00000e+00 1.00000e+01 ]
+
+
+
+
+0
+-----------------------
+tensor Name : 
+tensor Rank : 1
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+         --------     
+        /        \    
+        |      3 |____ 0
+        \        /    
+         --------     
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Conj&#39;,
+ &#39;Conj_&#39;,
+ &#39;Dagger&#39;,
+ &#39;Dagger_&#39;,
+ &#39;Init&#39;,
+ &#39;Load&#39;,
+ &#39;Nblocks&#39;,
+ &#39;Norm&#39;,
+ &#39;Pow&#39;,
+ &#39;Pow_&#39;,
+ &#39;Save&#39;,
+ &#39;Trace&#39;,
+ &#39;Trace_&#39;,
+ &#39;Transpose&#39;,
+ &#39;Transpose_&#39;,
+ &#39;__add__&#39;,
+ &#39;__class__&#39;,
+ &#39;__copy__&#39;,
+ &#39;__deepcopy__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__floordiv__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__getitem__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__iadd__&#39;,
+ &#39;__ifloordiv__&#39;,
+ &#39;__imul__&#39;,
+ &#39;__init__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__ipow__&#39;,
+ &#39;__isub__&#39;,
+ &#39;__itruediv__&#39;,
+ &#39;__le__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__module__&#39;,
+ &#39;__mul__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__neg__&#39;,
+ &#39;__new__&#39;,
+ &#39;__pos__&#39;,
+ &#39;__pow__&#39;,
+ &#39;__radd__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__rfloordiv__&#39;,
+ &#39;__rmul__&#39;,
+ &#39;__rsub__&#39;,
+ &#39;__rtruediv__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__setitem__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__sub__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;__truediv__&#39;,
+ &#39;_at&#39;,
+ &#39;_relabel_&#39;,
+ &#39;_relabels_&#39;,
+ &#39;_set_label&#39;,
+ &#39;arange&#39;,
+ &#39;astype&#39;,
+ &#39;astype_different_type&#39;,
+ &#39;at&#39;,
+ &#39;bond&#39;,
+ &#39;bond_&#39;,
+ &#39;bonds&#39;,
+ &#39;cConj_&#39;,
+ &#39;cDagger_&#39;,
+ &#39;cPow_&#39;,
+ &#39;cTrace_&#39;,
+ &#39;cTranspose_&#39;,
+ &#39;c__ipow__&#39;,
+ &#39;c_at&#39;,
+ &#39;c_relabel_&#39;,
+ &#39;c_relabels_&#39;,
+ &#39;c_set_label&#39;,
+ &#39;c_set_labels&#39;,
+ &#39;c_set_name&#39;,
+ &#39;c_set_rowrank_&#39;,
+ &#39;cfrom&#39;,
+ &#39;clone&#39;,
+ &#39;cnormalize_&#39;,
+ &#39;combineBonds&#39;,
+ &#39;contiguous&#39;,
+ &#39;contiguous_&#39;,
+ &#39;contract&#39;,
+ &#39;convert_from&#39;,
+ &#39;ctag&#39;,
+ &#39;ctruncate_&#39;,
+ &#39;device&#39;,
+ &#39;device_str&#39;,
+ &#39;dtype&#39;,
+ &#39;dtype_str&#39;,
+ &#39;elem_exists&#39;,
+ &#39;eye&#39;,
+ &#39;getTotalQnums&#39;,
+ &#39;get_block&#39;,
+ &#39;get_block_&#39;,
+ &#39;get_blocks&#39;,
+ &#39;get_blocks_&#39;,
+ &#39;get_blocks_qnums&#39;,
+ &#39;get_elem&#39;,
+ &#39;get_index&#39;,
+ &#39;get_qindices&#39;,
+ &#39;group_basis&#39;,
+ &#39;group_basis_&#39;,
+ &#39;identity&#39;,
+ &#39;is_blockform&#39;,
+ &#39;is_braket_form&#39;,
+ &#39;is_contiguous&#39;,
+ &#39;is_diag&#39;,
+ &#39;is_tag&#39;,
+ &#39;item&#39;,
+ &#39;labels&#39;,
+ &#39;linspace&#39;,
+ &#39;make_contiguous&#39;,
+ &#39;name&#39;,
+ &#39;normal&#39;,
+ &#39;normal_&#39;,
+ &#39;normalize&#39;,
+ &#39;normalize_&#39;,
+ &#39;ones&#39;,
+ &#39;permute&#39;,
+ &#39;permute_&#39;,
+ &#39;print_block&#39;,
+ &#39;print_blocks&#39;,
+ &#39;print_diagram&#39;,
+ &#39;put_block&#39;,
+ &#39;put_block_&#39;,
+ &#39;rank&#39;,
+ &#39;relabel&#39;,
+ &#39;relabel_&#39;,
+ &#39;relabels&#39;,
+ &#39;relabels_&#39;,
+ &#39;reshape&#39;,
+ &#39;reshape_&#39;,
+ &#39;rowrank&#39;,
+ &#39;same_data&#39;,
+ &#39;set_elem&#39;,
+ &#39;set_label&#39;,
+ &#39;set_labels&#39;,
+ &#39;set_name&#39;,
+ &#39;set_rowrank&#39;,
+ &#39;set_rowrank_&#39;,
+ &#39;shape&#39;,
+ &#39;syms&#39;,
+ &#39;tag&#39;,
+ &#39;to&#39;,
+ &#39;to_&#39;,
+ &#39;to_dense&#39;,
+ &#39;to_dense_&#39;,
+ &#39;to_different_device&#39;,
+ &#39;truncate&#39;,
+ &#39;truncate_&#39;,
+ &#39;uniform&#39;,
+ &#39;uniform_&#39;,
+ &#39;uten_type&#39;,
+ &#39;uten_type_str&#39;,
+ &#39;zeros&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">UT</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span><span class="o">.</span><span class="n">set_rowrank</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">UT</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">UT</span><span class="o">.</span><span class="n">rowrank</span><span class="p">())</span>
+<span class="n">UT</span><span class="p">[:,:,</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">UT</span><span class="p">[</span><span class="mi">1</span><span class="p">,:,:]</span><span class="o">.</span><span class="n">rowrank</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------
+tensor Name : 
+tensor Rank : 3
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+          ---------     
+         /         \    
+   0 ____| 2     4 |____ 2
+         |         |    
+   1 ____| 3       |        
+         \         /    
+          ---------     
+2
+-----------------------
+tensor Name : 
+tensor Rank : 3
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+         --------     
+        /        \    
+        |      2 |____ 0
+        |        |    
+        |      3 |____ 1
+        |        |    
+        |      2 |____ 2
+        \        /    
+         --------     
+0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">UT</span><span class="o">.</span><span class="n">rank</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">UT</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span><span class="o">.</span><span class="n">set_name</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">UT</span><span class="o">.</span><span class="n">rowrank</span><span class="p">())</span>
+<span class="n">UT</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">UT</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">UT</span><span class="o">.</span><span class="n">at</span><span class="p">([</span><span class="mi">2</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">UT</span><span class="o">.</span><span class="n">at</span><span class="p">([</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">UT</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">UT</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+-----------------------
+tensor Name : T
+tensor Rank : 2
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+          ---------     
+         /         \    
+   0 ____| 3     4 |____ 1
+         \         /    
+          ---------     
+-------- start of print ---------
+Tensor name: T
+is_diag    : False
+contiguous : True
+
+Total elem: 12
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (3,4)
+[[1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]
+ [1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]
+ [1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]]
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">UT</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">UT</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="n">UT</span><span class="o">.</span><span class="n">at</span><span class="p">([</span><span class="mi">2</span><span class="p">]))</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="n">UT</span><span class="o">.</span><span class="n">at</span><span class="p">([</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="nb">print</span><span class="p">(</span><span class="n">UT</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="nn">File ~/miniforge3/lib/python3.10/site-packages/cytnx-0.9.7-py3.10-macosx-11.0-arm64.egg/cytnx/utils.py:111,</span> in <span class="ni">add_ovld_method.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">mem</span><span class="p">[</span><span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span> <span class="c1">#passing class instance:</span>
+<span class="ne">--&gt; </span><span class="mi">111</span> <span class="k">return</span> <span class="n">obj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~/miniforge3/lib/python3.10/site-packages/cytnx-0.9.7-py3.10-macosx-11.0-arm64.egg/cytnx/utils.py:27,</span> in <span class="ni">Overload_methods.__call__</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="n">arguments</span> <span class="o">=</span> <span class="n">sig</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">arguments</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="k">if</span> <span class="nb">all</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="n">param</span><span class="o">.</span><span class="n">annotation</span> <span class="ow">is</span> <span class="n">param</span><span class="o">.</span><span class="n">empty</span> <span class="ow">or</span> <span class="n">is_bearable</span><span class="p">(</span><span class="n">arguments</span><span class="p">[</span><span class="n">name</span><span class="p">],</span><span class="n">param</span><span class="o">.</span><span class="n">annotation</span><span class="p">)</span>
+<span class="nn">     24     for name, param</span> in <span class="ni">sig.parameters.items</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span>     <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">arguments</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">27</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">reged_sigs</span><span class="p">[</span><span class="n">sig</span><span class="p">](</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span>     <span class="k">raise</span> <span class="ne">TypeError</span>
+
+<span class="nn">File ~/miniforge3/lib/python3.10/site-packages/cytnx-0.9.7-py3.10-macosx-11.0-arm64.egg/cytnx/UniTensor_conti.py:235,</span> in <span class="ni">at</span><span class="nt">(self, locator)</span>
+<span class="g g-Whitespace">    </span><span class="mi">233</span> <span class="nd">@add_ovld_method</span><span class="p">(</span><span class="n">UniTensor</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">234</span> <span class="k">def</span> <span class="nf">at</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">locator</span><span class="p">:</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]):</span>
+<span class="ne">--&gt; </span><span class="mi">235</span>     <span class="n">tmp_hclass</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">c_at</span><span class="p">(</span><span class="n">locator</span><span class="p">);</span>
+<span class="g g-Whitespace">    </span><span class="mi">236</span>     <span class="k">return</span> <span class="n">Hclass</span><span class="p">(</span><span class="n">tmp_hclass</span><span class="p">)</span>
+
+<span class="ne">RuntimeError</span>: 
+<span class="c1"># Cytnx error occur at cytnx::Scalar::Sproxy cytnx::Tensor_impl::at(const std::vector&lt;long long unsigned int&gt;&amp;)</span>
+<span class="c1"># error: The input index does not match Tensor&#39;s rank.</span>
+<span class="c1"># file : /Users/pcchen/github/Cytnx/include/backend/Tensor_impl.hpp (164)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">UT</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">42</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">UT</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+
+<span class="ne">RuntimeError</span>: 
+<span class="c1"># Cytnx error occur at T&amp; cytnx::Tensor::item() [with T = double]</span>
+<span class="c1"># error: [ERROR][Tensor.item&lt;T&gt;]item can only be called from a Tensor with only one element</span>
+
+<span class="c1"># file : /Users/pcchen/github/Cytnx/include/Tensor.hpp (915)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">UT</span><span class="o">.</span><span class="n">at</span><span class="p">([</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">value</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">UT</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">UT</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">UT</span><span class="p">)</span>
+
+<span class="n">UT</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">UT</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">UT</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------
+tensor Name : 
+tensor Rank : 2
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+          ---------     
+         /         \    
+   0 ____| 1     2 |____ 1
+         \         /    
+          ---------     
+-------- start of print ---------
+Tensor name: 
+is_diag    : False
+contiguous : True
+
+Total elem: 2
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (1,2)
+[[1.00000e+00 1.00000e+00 ]]
+
+
+
+
+-----------------------
+tensor Name : 
+tensor Rank : 2
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+          ---------     
+         /         \    
+   0 ____| 2     1 |____ 1
+         \         /    
+          ---------     
+-------- start of print ---------
+Tensor name: 
+is_diag    : False
+contiguous : True
+
+Total elem: 2
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (2,1)
+[[1.00000e+00 ]
+ [1.00000e+00 ]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">UT</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">set_rowrank</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">UT</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">UT</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------
+tensor Name : 
+tensor Rank : 1
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+          --------     
+         /        \    
+   0 ____| 2      |        
+         \        /    
+          --------     
+-------- start of print ---------
+Tensor name: 
+is_diag    : False
+contiguous : True
+
+Total elem: 2
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (2)
+[1.00000e+00 1.00000e+00 ]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">UT</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">set_rowrank</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">UT</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">UT</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------
+tensor Name : 
+tensor Rank : 1
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+         --------     
+        /        \    
+        |      2 |____ 0
+        \        /    
+         --------     
+-------- start of print ---------
+Tensor name: 
+is_diag    : False
+contiguous : True
+
+Total elem: 2
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (2)
+[1.00000e+00 1.00000e+00 ]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">UT</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">set_rowrank</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">UT</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">UT</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------
+tensor Name : 
+tensor Rank : 2
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+         --------     
+        /        \    
+        |      2 |____ 0
+        |        |    
+        |      2 |____ 1
+        \        /    
+         --------     
+-------- start of print ---------
+Tensor name: 
+is_diag    : False
+contiguous : True
+
+Total elem: 4
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (2,2)
+[[1.00000e+00 1.00000e+00 ]
+ [1.00000e+00 1.00000e+00 ]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">UT</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">UT</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">UT</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------
+tensor Name : 
+tensor Rank : 3
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+          ---------     
+         /         \    
+   0 ____| 2     2 |____ 1
+         |         |    
+         |       2 |____ 2
+         \         /    
+          ---------     
+-------- start of print ---------
+Tensor name: 
+is_diag    : False
+contiguous : True
+
+Total elem: 8
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (2,2,2)
+[[[1.00000e+00 1.00000e+00 ]
+  [1.00000e+00 1.00000e+00 ]]
+ [[1.00000e+00 1.00000e+00 ]
+  [1.00000e+00 1.00000e+00 ]]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cytnx</span><span class="o">.</span><span class="n">Qs</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([1, 2], 2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">cytnx</span><span class="o">.</span><span class="n">Qs</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on _cQs in module cytnx.cytnx object:
+
+class _cQs(pybind11_builtins.pybind11_object)
+ |  Method resolution order:
+ |      _cQs
+ |      pybind11_builtins.pybind11_object
+ |      builtins.object
+ |  
+ |  Methods defined here:
+ |  
+ |  __init__(...)
+ |      __init__(self: cytnx.cytnx._cQs, qin: List[int]) -&gt; None
+ |  
+ |  __rshift__(...)
+ |      __rshift__(self: cytnx.cytnx._cQs, dim: int) -&gt; Tuple[List[int], int]
+ |  
+ |  ----------------------------------------------------------------------
+ |  Static methods inherited from pybind11_builtins.pybind11_object:
+ |  
+ |  __new__(*args, **kwargs) from pybind11_builtins.pybind11_type
+ |      Create and return a new object.  See help(type) for accurate signature.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">Symmetry</span><span class="o">.</span><span class="n">U1</span><span class="p">()</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">Symmetry</span><span class="o">.</span><span class="n">U1</span><span class="p">()</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">Symmetry</span><span class="o">.</span><span class="n">Zn</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b1</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">Bond</span><span class="p">(</span><span class="n">cytnx</span><span class="o">.</span><span class="n">BD_IN</span><span class="p">,</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="n">cytnx</span><span class="o">.</span><span class="n">Symmetry</span><span class="o">.</span><span class="n">U1</span><span class="p">(),</span><span class="n">cytnx</span><span class="o">.</span><span class="n">Symmetry</span><span class="o">.</span><span class="n">U1</span><span class="p">()])</span>
+<span class="n">b1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dim = 4 |type: |IN (KET)&gt;     
+ U1::   +0  +1
+ U1::   +0  +1
+Deg&gt;&gt;    2   2
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b2</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">Bond</span><span class="p">(</span><span class="n">cytnx</span><span class="o">.</span><span class="n">BD_IN</span><span class="p">,</span> <span class="p">[([</span><span class="mi">0</span><span class="p">],</span><span class="mi">2</span><span class="p">),([</span><span class="mi">1</span><span class="p">],</span><span class="mi">2</span><span class="p">)],</span> <span class="p">[</span><span class="n">cytnx</span><span class="o">.</span><span class="n">Symmetry</span><span class="o">.</span><span class="n">U1</span><span class="p">()])</span>
+<span class="n">b2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dim = 4 |type: |IN (KET)&gt;     
+ U1::   +0  +1
+Deg&gt;&gt;    2   2
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b1</span> <span class="o">==</span> <span class="n">b2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b1</span> <span class="ow">is</span> <span class="n">b2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">U1</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">Symmetry</span><span class="o">.</span><span class="n">U1</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">U1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------------
+[Symmetry]
+type : Abelian, U1
+combine rule : Q1 + Q2
+reverse rule : Q*(-1) 
+--------------------
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Z3</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">Symmetry</span><span class="o">.</span><span class="n">Zn</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Z3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------------
+[Symmetry]
+type : Abelian, Z(3)
+combine rule : (Q1 + Q2)%3
+reverse rule : Q*(-1) 
+--------------------
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="scipost">
+<h1>SciPost<a class="headerlink" href="#scipost" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cytnx</span>
+
+<span class="c1"># Create a Tensor initialized with ones; similar syntax as Numpy array</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+<span class="c1"># Create a UniTensor and set labels for the indices</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;v1&quot;</span><span class="p">,</span><span class="s2">&quot;phy&quot;</span><span class="p">,</span><span class="s2">&quot;v2我&quot;</span><span class="p">])</span>
+<span class="n">A</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------
+tensor Name : 
+tensor Rank : 3
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+           ---------     
+          /         \    
+   v1 ____| 8     2 |____ phy
+          |         |    
+          |       8 |____ v2我
+          \         /    
+           ---------     
+</pre></div>
+</div>
+</div>
+</div>
+<section id="objects-behavior">
+<h2>1. Objects behavior<a class="headerlink" href="#objects-behavior" title="Link to this heading">#</a></h2>
+<section id="everything-is-reference">
+<h3>1.1 Everything is reference¶<a class="headerlink" href="#everything-is-reference" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cytnx</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">Tensor</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">A</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">B</span> <span class="ow">is</span> <span class="n">A</span><span class="p">)</span> <span class="c1"># true</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="clone">
+<h3>1.2 Clone<a class="headerlink" href="#clone" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cytnx</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">Tensor</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]);</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">A</span><span class="p">;</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">clone</span><span class="p">();</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">B</span> <span class="ow">is</span> <span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">C</span> <span class="ow">is</span> <span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="device">
+<h2>2. Device<a class="headerlink" href="#device" title="Link to this heading">#</a></h2>
+<section id="number-of-threads">
+<h3>2.1 Number of threads<a class="headerlink" href="#number-of-threads" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cytnx</span><span class="o">.</span><span class="n">Device</span><span class="o">.</span><span class="n">Ncpus</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="number-of-gpus">
+<h3>2.2 Number of GPUs<a class="headerlink" href="#number-of-gpus" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cytnx</span><span class="o">.</span><span class="n">Device</span><span class="o">.</span><span class="n">Ngpus</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="gpu-status">
+<h3>2.3 GPU status<a class="headerlink" href="#gpu-status" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cytnx</span><span class="o">.</span><span class="n">Device</span><span class="o">.</span><span class="n">Print_Property</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=== No CUDA support ===
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id1">
+<h2>3. Tensor<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="creating-a-tensor">
+<h3>3.1 Creating a Tensor<a class="headerlink" href="#creating-a-tensor" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>     <span class="c1">#rank-1 Tensor from [0,10) with step 1</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span> <span class="c1">#rank-1 Tensor from [0,10) with step 2</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]);</span>  <span class="c1">#Tensor of shape (3,4,5) with all elements set to one.</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>         <span class="c1">#Tensor of shape (3,3) with diagonal elements set to one, all other entries are zero.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total elem: 10
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (10)
+[0.00000e+00 1.00000e+00 2.00000e+00 3.00000e+00 4.00000e+00 5.00000e+00 6.00000e+00 7.00000e+00 8.00000e+00 9.00000e+00 ]
+
+
+
+
+Total elem: 5
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (5)
+[0.00000e+00 2.00000e+00 4.00000e+00 6.00000e+00 8.00000e+00 ]
+
+
+
+
+Total elem: 60
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (3,4,5)
+[[[1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]
+  [1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]
+  [1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]
+  [1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]]
+ [[1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]
+  [1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]
+  [1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]
+  [1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]]
+ [[1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]
+  [1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]
+  [1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]
+  [1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]]]
+
+
+
+
+Total elem: 9
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (3,3)
+[[1.00000e+00 0.00000e+00 0.00000e+00 ]
+ [0.00000e+00 1.00000e+00 0.00000e+00 ]
+ [0.00000e+00 0.00000e+00 1.00000e+00 ]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="manipulating-tensors">
+<h2>3.2. Manipulating Tensors¶<a class="headerlink" href="#manipulating-tensors" title="Link to this heading">#</a></h2>
+<section id="reshape">
+<h3>3.2.1. reshape<a class="headerlink" href="#reshape" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total elem: 24
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (24)
+[0.00000e+00 1.00000e+00 2.00000e+00 3.00000e+00 4.00000e+00 5.00000e+00 6.00000e+00 7.00000e+00 8.00000e+00 9.00000e+00 1.00000e+01 1.10000e+01 1.20000e+01 1.30000e+01 1.40000e+01 1.50000e+01 1.60000e+01 1.70000e+01 1.80000e+01 1.90000e+01 2.00000e+01 2.10000e+01 2.20000e+01 2.30000e+01 ]
+
+
+
+
+Total elem: 24
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (2,3,4)
+[[[0.00000e+00 1.00000e+00 2.00000e+00 3.00000e+00 ]
+  [4.00000e+00 5.00000e+00 6.00000e+00 7.00000e+00 ]
+  [8.00000e+00 9.00000e+00 1.00000e+01 1.10000e+01 ]]
+ [[1.20000e+01 1.30000e+01 1.40000e+01 1.50000e+01 ]
+  [1.60000e+01 1.70000e+01 1.80000e+01 1.90000e+01 ]
+  [2.00000e+01 2.10000e+01 2.20000e+01 2.30000e+01 ]]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id2">
+<h2>7. UniTensor<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+</section>
+<section id="print-and-display">
+<h2>7.1. Print and display<a class="headerlink" href="#print-and-display" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uT</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="p">(</span><span class="n">cytnx</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;untagged tensor&quot;</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">])</span>
+<span class="n">bond_d</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">Bond</span><span class="p">(</span><span class="n">cytnx</span><span class="o">.</span><span class="n">BD_IN</span><span class="p">,</span> <span class="p">[</span><span class="n">cytnx</span><span class="o">.</span><span class="n">Qs</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;&gt;</span><span class="mi">1</span><span class="p">,</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">Qs</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;&gt;</span><span class="mi">1</span><span class="p">],[</span><span class="n">cytnx</span><span class="o">.</span><span class="n">Symmetry</span><span class="o">.</span><span class="n">U1</span><span class="p">()])</span>
+<span class="n">bond_e</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">Bond</span><span class="p">(</span><span class="n">cytnx</span><span class="o">.</span><span class="n">BD_IN</span><span class="p">,</span> <span class="p">[</span><span class="n">cytnx</span><span class="o">.</span><span class="n">Qs</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;&gt;</span><span class="mi">1</span><span class="p">,</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">Qs</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;&gt;</span><span class="mi">1</span><span class="p">],[</span><span class="n">cytnx</span><span class="o">.</span><span class="n">Symmetry</span><span class="o">.</span><span class="n">U1</span><span class="p">()])</span>
+<span class="n">bond_f</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">Bond</span><span class="p">(</span><span class="n">cytnx</span><span class="o">.</span><span class="n">BD_OUT</span><span class="p">,</span> <span class="p">[</span><span class="n">cytnx</span><span class="o">.</span><span class="n">Qs</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">&gt;&gt;</span><span class="mi">1</span><span class="p">,</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">Qs</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">&gt;&gt;</span><span class="mi">2</span><span class="p">,</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">Qs</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">&gt;&gt;</span><span class="mi">1</span><span class="p">],[</span><span class="n">cytnx</span><span class="o">.</span><span class="n">Symmetry</span><span class="o">.</span><span class="n">U1</span><span class="p">()])</span>
+<span class="n">bond_g</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">Bond</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">cytnx</span><span class="o">.</span><span class="n">BD_OUT</span><span class="p">)</span>
+<span class="n">bond_h</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">Bond</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">cytnx</span><span class="o">.</span><span class="n">BD_IN</span><span class="p">)</span>
+<span class="n">Tsymm</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="p">([</span><span class="n">bond_d</span><span class="p">,</span> <span class="n">bond_e</span><span class="p">,</span> <span class="n">bond_f</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;symm. tensor&quot;</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">,</span><span class="s2">&quot;e&quot;</span><span class="p">,</span><span class="s2">&quot;f&quot;</span><span class="p">])</span>
+<span class="n">Tdiag</span><span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="p">([</span><span class="n">bond_g</span><span class="p">,</span> <span class="n">bond_h</span><span class="p">],</span> <span class="n">is_diag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;diag tensor&quot;</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">,</span><span class="s2">&quot;h&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">uT</span><span class="p">)</span>
+<span class="n">uT</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-------- start of print ---------
+Tensor name: untagged tensor
+is_diag    : False
+contiguous : True
+
+Total elem: 24
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (2,3,4)
+[[[1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]
+  [1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]
+  [1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]]
+ [[1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]
+  [1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]
+  [1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]]]
+
+
+
+
+-----------------------
+tensor Name : untagged tensor
+tensor Rank : 3
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+          ---------     
+         /         \    
+   a ____| 2     3 |____ b
+         |         |    
+         |       4 |____ c
+         \         /    
+          ---------     
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uT</span><span class="o">.</span><span class="n">relabels_</span><span class="p">([</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">])</span>
+<span class="n">uT</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------
+tensor Name : untagged tensor
+tensor Rank : 3
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+          ---------     
+         /         \    
+   0 ____| 2     3 |____ 1
+         |         |    
+         |       4 |____ 2
+         \         /    
+          ---------     
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xT</span><span class="o">=</span><span class="n">uT</span><span class="o">.</span><span class="n">relabels</span><span class="p">([</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">])</span>
+<span class="n">xT</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------
+tensor Name : untagged tensor
+tensor Rank : 3
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+          ---------     
+         /         \    
+   a ____| 2     3 |____ b
+         |         |    
+         |       4 |____ c
+         \         /    
+          ---------     
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># uT.print_diagram()</span>
+<span class="n">Tsymm</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+<span class="n">Tdiag</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------
+tensor Name : symm. tensor
+tensor Rank : 3
+contiguous  : True
+valid blocks : 4
+is diag   : False
+on device   : cytnx device: CPU
+      row           col 
+         -----------    
+         |         |    
+   d  --&gt;| 2     4 |--&gt;  f
+         |         |    
+   e  --&gt;| 2       |        
+         |         |    
+         -----------    
+
+-----------------------
+tensor Name : diag tensor
+tensor Rank : 2
+block_form  : False
+is_diag     : True
+on device   : cytnx device: CPU
+braket_form : False
+      row           col 
+         -----------    
+         |         |    
+   g *&lt;--| 2     2 |&lt;--* h
+         |         |    
+         -----------    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uT</span><span class="o">=</span><span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="p">(</span><span class="n">cytnx</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]))</span><span class="o">.</span><span class="n">relabels_</span><span class="p">([</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">])</span>
+<span class="n">uT</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uT</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="p">(</span><span class="n">cytnx</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;untagged tensor&quot;</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">])</span>
+<span class="n">uT</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-------- start of print ---------
+Tensor name: untagged tensor
+is_diag    : False
+contiguous : True
+
+Total elem: 24
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (2,3,4)
+[[[1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]
+  [1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]
+  [1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]]
+ [[1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]
+  [1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]
+  [1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]]]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uT</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------
+tensor Name : untagged tensor
+tensor Rank : 3
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+          ---------     
+         /         \    
+   a ____| 2     3 |____ b
+         |         |    
+         |       4 |____ c
+         \         /    
+          ---------     
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">uT</span><span class="o">.</span><span class="n">relabels_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on method relabels_ in module cytnx.cytnx:
+
+relabels_(...) method of cytnx.cytnx.UniTensor instance
+    relabels_(self: cytnx.cytnx.UniTensor, new_labels: List[str]) -&gt; None
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uT</span><span class="o">.</span><span class="n">relabels</span><span class="p">([</span><span class="s2">&quot;c&quot;</span><span class="p">,</span><span class="s2">&quot;e&quot;</span><span class="p">,</span><span class="s2">&quot;f&quot;</span><span class="p">])</span>
+<span class="n">uT</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------
+tensor Name : untagged tensor
+tensor Rank : 3
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+          ---------     
+         /         \    
+   a ____| 2     3 |____ b
+         |         |    
+         |       4 |____ c
+         \         /    
+          ---------     
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uT</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="p">(</span><span class="n">cytnx</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;untagged tensor&quot;</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">])</span>
+<span class="n">uT</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+<span class="n">uT</span><span class="o">.</span><span class="n">relabel_</span><span class="p">([</span><span class="s2">&quot;a&quot;</span><span class="p">],[</span><span class="s2">&quot;x&quot;</span><span class="p">])</span>
+<span class="n">uT</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------
+tensor Name : untagged tensor
+tensor Rank : 3
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+          ---------     
+         /         \    
+   a ____| 2     3 |____ b
+         |         |    
+         |       4 |____ c
+         \         /    
+          ---------     
+-------- start of print ---------
+Tensor name: untagged tensor
+is_diag    : False
+contiguous : True
+
+Total elem: 24
+type  : Double (Float64)
+cytnx device: CPU
+Shape : (2,3,4)
+[[[1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]
+  [1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]
+  [1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]]
+ [[1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]
+  [1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]
+  [1.00000e+00 1.00000e+00 1.00000e+00 1.00000e+00 ]]]
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">42</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">uT</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="p">(</span><span class="n">cytnx</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;untagged tensor&quot;</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">uT</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">uT</span><span class="o">.</span><span class="n">relabel_</span><span class="p">([</span><span class="s2">&quot;a&quot;</span><span class="p">],[</span><span class="s2">&quot;x&quot;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">uT</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+
+<span class="ne">TypeError</span>: relabel_(): incompatible function arguments. The following argument types are supported:
+<span class="g g-Whitespace">    </span><span class="mi">1</span><span class="o">.</span> <span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="p">,</span> <span class="n">idx</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">new_label</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">2</span><span class="o">.</span> <span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="p">,</span> <span class="n">old_label</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">new_label</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+
+<span class="n">Invoked</span> <span class="k">with</span><span class="p">:</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uT</span> <span class="o">=</span> <span class="n">cytnx</span><span class="o">.</span><span class="n">UniTensor</span><span class="p">(</span><span class="n">cytnx</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;untagged tensor&quot;</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">])</span>
+<span class="n">uT</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+<span class="n">uT</span><span class="o">.</span><span class="n">relabel_</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">uT</span><span class="o">.</span><span class="n">print_diagram</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------
+tensor Name : untagged tensor
+tensor Rank : 3
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+          ---------     
+         /         \    
+   a ____| 2     3 |____ b
+         |         |    
+         |       4 |____ c
+         \         /    
+          ---------     
+-----------------------
+tensor Name : untagged tensor
+tensor Rank : 3
+block_form  : False
+is_diag     : False
+on device   : cytnx device: CPU
+          ---------     
+         /         \    
+   a ____| 2     3 |____ x
+         |         |    
+         |       4 |____ c
+         \         /    
+          ---------     
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">The Hitchhiker’s Guide to Cytnx (≥0.9.7)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warning">Warning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">Numpy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor">Tensor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unitensor">UniTensor</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rank-n-unitensor-and-scalar">Rank <span class="math notranslate nohighlight">\(n\)</span> UniTensor and scalar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rank-1-tensor-and-vector">Rank-1 tensor and vector</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rank-2-tensor-and-matrix">Rank-2 tensor and matrix</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#issue">issue</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separator">Separator</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#scipost">SciPost</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-behavior">1. Objects behavior</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#everything-is-reference">1.1 Everything is reference¶</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone">1.2 Clone</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device">2. Device</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-threads">2.1 Number of threads</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-gpus">2.2 Number of GPUs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-status">2.3 GPU status</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3. Tensor</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-tensor">3.1 Creating a Tensor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulating-tensors">3.2. Manipulating Tensors¶</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reshape">3.2.1. reshape</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7. UniTensor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print-and-display">7.1. Print and display</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Pochung Chen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

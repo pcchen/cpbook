@@ -8,3 +8,6 @@ We focus on following topics:
 * Strongly Correlated Many-Body Systems
 * Tensor Network Methods
 * Finite Size Scaling
+* Quantum Computation
+
+{cite}`Guo.2023qd`.

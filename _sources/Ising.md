@@ -52,23 +52,7 @@ $$
   = \text{Tr}\left( T^4 \right).
 $$
 
-We have
-
-$$
-  Z[N]=\text{Tr}\left( T^N \right)=\lambda^N_+ + \lambda^N_-,
-$$
-where $\lambda_\pm$ are the eigenvalues of the transfer matrix $[T]$
-
-$$
-  \lambda_\pm = e^{\beta J}\cosh(\beta h)
-  \pm \sqrt{e^{2\beta J} \sinh(\beta h) + e^{-2\beta J}}
-$$
-
-when $h=0$
-
-$$
-  \lambda_\pm(h=0) = e^{\beta J} \pm e^{-\beta J}
-$$
+We have $Z[N]=\text{Tr}\left( T^N \right)$.
 
 ## Ising model in two dimensions
 

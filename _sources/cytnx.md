@@ -1,5 +1,8 @@
 # cytnx installations
 
+## pip install
+pip install . -vv
+
 ## Conda install
 
 ### OSX

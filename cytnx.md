@@ -1,5 +1,8 @@
 # cytnx installations
 
+## pip install
+pip install . -vv
+
 ## Conda install
 
 ### OSX
@@ -16,6 +19,18 @@ conda install -c kaihsinwu cytnx
 
 ### Ubuntu
 **Prerequisites**
+
+### MacOS (arm)+gcc+openblas
+````
+brew install gcc openblas lapack boost pybind11
+````
+
+````
+cd /usr/local/lib
+ln -s ../Cellar/openblas/0.3.20/lib/libopenblas.dylib
+cd /usr/local/include
+ln -s ../../Cellar/openblas/3.10.0/include/lapack*
+````
 
 
 ### MacOS (Intel)+icpc+mkl
@@ -49,4 +64,15 @@ cmake -DCMAKE_C_COMPILER=/usr/local/bin/gcc-11 -DCMAKE_CXX_COMPILER=/usr/local/b
 ````
 
 ### Raspberri Pi OS (64bit)
-**Prerequisites**
+````
+sudo apt update
+sudo apt full-upgrade
+sudo apt-get install cmake
+sudo apt-get install libboost-all-dev
+sudo apt-get install libopenblas-dev
+sudo apt-get install libopenblas64-0 ??
+sudo apt-get install liblapacke-dev
+sudo apt-get install pybind11-dev
+git clone https://github.com/Cytnx-dev/Cytnx.git
+
+````

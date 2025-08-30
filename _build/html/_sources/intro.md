@@ -1,3 +1,0 @@
-# Computational Physics
-
-Pochung Chen
